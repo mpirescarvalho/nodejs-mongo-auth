@@ -6,8 +6,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-require("./controllers/authController.js")(app);
-require("./controllers/projectController.js")(app);
+require("./app/controllers/index")(app);
 
 app.get("/", (req, res) => {
 	res.send({ message: "Hello Auth" });
